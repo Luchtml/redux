@@ -2,8 +2,10 @@ import React from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
+  const reserveSize = useSelector((state) => state.reserve.length);
   return (
     <header className="container">
       <Link to="/">
@@ -12,7 +14,7 @@ const Header = () => {
       <Link className="reserva" to="/reservas">
         <div>
           <strong>Minhas Reservas</strong>
-          <span>3 Reservas</span>
+          <span>{reserveSize} reservas</span>
         </div>
       </Link>
     </header>
