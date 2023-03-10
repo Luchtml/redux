@@ -5,7 +5,7 @@ import './style.css';
 import { useDispatch } from 'react-redux';
 import { addReserveRequest } from '../../store/modules/reserve/actions';
 
-const Home = () => {
+const Home = ({ history }) => {
   const [trips, setTrips] = React.useState([]);
   const dispatch = useDispatch();
 
